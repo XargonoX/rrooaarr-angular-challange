@@ -19,6 +19,8 @@ The state.service.ts provides a  state management implementation, consisting of 
 
 It's your task to enrich this app with additional functionality.
 
+Please us ts-doc comments to document your code changes.
+
 ## Tasks 
 
 ### Add a Lazy Loaded Module with form to add a measurement
@@ -29,14 +31,15 @@ Add a form to the lazy loaded module, which enables endusers to add additional M
 
 Implement this functionality in a fully reactive manner. Keep the state of the Application(managed in the BehaviouralSubjects) immutable.
 
-You **do not** have to implement any data persistence.
+Add a link in the Sidebar Nav to the newly created Form.
 
-Adding the Data to the local state is fine.
+You **do not** have to implement any data persistence. Adding the Data to the local state is fine.
 
 ### Add A Websocket Listener
 You will find an existing websocket host under ws://challenge3.rrooaarr.cloud/.
 
-This Websocket hosts sends messages containing additional Measurments. Each message is in the correct format according to the Measurement Interface.
+This Websocket hosts sends messages containing additional Measurements. Each message is in the correct format according to the Measurement Interface. You **do not** have to validate the incoming data.
+
 
 Implement the functionality to add all Incoming Measurements to the DataTable.
 
