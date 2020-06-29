@@ -1,27 +1,47 @@
 # AngularChallenge
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
-## Development server
+## Initialize project:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+For the Angular CLI to work the yarn package manager must be installed. 
+Configure Angular CLI to use yarn and install all dependencies.
 
-## Code scaffolding
+    $ ng config --global cli.packageManager yarn
+    $ yarn
+All Angular CLI functionality is now available.
+    
+    $ ng serve
+   
+## Project Overview
+The Project is a simple App, that displays Datasets from Measurements  in a simple datatable.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The state.service.ts provides a  state management implementation, consisting of BehaviouralSubjects, which emit all Values to be displayed in the datatable and a information about the state of the sidebar.
 
-## Build
+It's your task to enrich this app with additional functionality.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Tasks 
 
-## Running unit tests
+### Add a Lazy Loaded Module with form to add a measurement
+Add a Lazy Loaded Module to the application.
+Add at least one component to the Module which is displayed under it's own route.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Add a form to the lazy loaded module, which enables endusers to add additional Measurements to the datatable.
 
-## Running end-to-end tests
+Implement this functionality in a fully reactive manner. Keep the state of the Application(managed in the BehaviouralSubjects) immutable.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+You **do not** have to implement any data persistence.
 
-## Further help
+Adding the Data to the local state is fine.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Add A Websocket Listener
+You will find an existing websocket host under ws://challenge3.rrooaarr.cloud/.
+
+This Websocket hosts sends messages containing additional Measurments. Each message is in the correct format according to the Measurement Interface.
+
+Implement the functionality to add all Incoming Measurements to the DataTable.
+
+Please Note that Incoming Websocket-Measurements and Measurements from the form should be merged. 
+
+### Optional
+
+Implement a Bar Chart with ng2-charts which displays the Data over Time and automatically updates with the state.

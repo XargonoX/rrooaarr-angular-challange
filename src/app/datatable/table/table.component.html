@@ -1,0 +1,23 @@
+<mat-table [dataSource]="tableData$">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let measurement">{{ measurement.id }}</td>
+  </ng-container>
+  <ng-container matColumnDef="value">
+    <th mat-header-cell *matHeaderCellDef>Messwert</th>
+    <td mat-cell *matCellDef="let measurement">{{ measurement.value }}</td>
+  </ng-container>
+  <ng-container matColumnDef="scientist">
+    <th mat-header-cell *matHeaderCellDef>Wissenschaftler</th>
+    <td mat-cell *matCellDef="let measurement">{{ measurement.scientist }}</td>
+  </ng-container>
+  <ng-container matColumnDef="time">
+    <th mat-header-cell *matHeaderCellDef>Messzeit</th>
+    <td mat-cell *matCellDef="let measurement">
+      {{ measurement.time | date }}
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let measurement; columns: columnsToDisplay"></tr>
+
+</mat-table>
