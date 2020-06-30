@@ -40,6 +40,12 @@ You will find an existing websocket host under ws://challenge3.rrooaarr.cloud/.
 
 This Websocket hosts sends messages containing additional Measurements. Each message is in the correct format according to the Measurement Interface. You **do not** have to validate the incoming data.
 
+You must send an initial message with the following format to the Websocket Host:
+     
+     {
+        "event": "measurements",
+        "data": "test"
+     }
 
 Implement the functionality to add all Incoming Measurements to the DataTable.
 
@@ -47,4 +53,4 @@ Please Note that Incoming Websocket-Measurements and Measurements from the form 
 
 ### Optional
 
-Implement a Bar Chart with ng2-charts which displays the Data over Time and automatically updates with the state.
+Implement a Line Chart with ng2-charts which displays the Data over Time and automatically updates with the state.
