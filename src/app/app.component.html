@@ -1,7 +1,8 @@
 <mat-sidenav-container class="container" (backdropClick)="closeSideBar()">
   <mat-sidenav [opened]="sidenavOpened$ | async" disableClose mode="push">
     <mat-nav-list>
-      <mat-list-item>Example</mat-list-item>
+      <mat-list-item routerLink="">Show Measurements Table</mat-list-item>
+      <mat-list-item routerLink="addMeasurementPage">Add Measurement</mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content

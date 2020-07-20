@@ -8,7 +8,8 @@ const routes: Routes = [
   {
     path: '',
     component: RootComponent
-  }
+  },
+  { path: 'addMeasurementPage', loadChildren: () => import('./add-measurement-form/add-measurement-form.module').then(m => m.AddMeasurementFormModule) }
 ];
 
 @NgModule({
