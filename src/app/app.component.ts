@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { StateService } from "./state.service";
+import { WebsocketListenerService } from "./websocket-listener.service";
 
 @Component({
   selector: "app-root",
@@ -9,7 +10,7 @@ import { StateService } from "./state.service";
 export class AppComponent {
   title = "angular-challenge";
   sidenavOpened$ = this.state.sideNavState$;
-  constructor(private state: StateService) {}
+  constructor(private state: StateService, private webSocketListener: WebsocketListenerService) {}
 
   openSidebar(): void {
     this.sidenavOpened$.next(true);

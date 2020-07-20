@@ -31,7 +31,6 @@ export class AddMeasurementFormComponent implements OnInit {
     }
 
   onSubmitForm() {
-    console.log(this.form);
     const newDataPoint = new FormData();
     newDataPoint.id = "manually-added";
     newDataPoint.value =  this.form.value.value;
