@@ -13,4 +13,7 @@ export class StateService {
     this.sideNavState$ = new BehaviorSubject<boolean>(false);
     this.currentMasurements$ = new BehaviorSubject<Measurement[]>(mockdata);
   }
+  addMeasurement(measurement){
+    this.currentMasurements$.next(this.currentMasurements$.getValue().concat(measurement))
+  }
 }
