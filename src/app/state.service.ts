@@ -6,14 +6,17 @@ import { mockdata } from "./mockdata";
 @Injectable({
   providedIn: "root"
 })
+
 export class StateService {
   sideNavState$: BehaviorSubject<boolean>;
   currentMasurements$: BehaviorSubject<Measurement[]>;
+  
   constructor() {
     this.sideNavState$ = new BehaviorSubject<boolean>(false);
     this.currentMasurements$ = new BehaviorSubject<Measurement[]>(mockdata);
   }
-  addMeasurement(measurement){
+
+  addMeasurement(measurement: Measurement[]){
     this.currentMasurements$.next(this.currentMasurements$.getValue().concat(measurement))
   }
 }
