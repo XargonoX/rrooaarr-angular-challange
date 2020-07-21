@@ -9,7 +9,8 @@ const routes: Routes = [
     path: '',
     component: RootComponent
   },
-  { path: 'addMeasurementPage', loadChildren: () => import('./add-measurement-form/add-measurement-form.module').then(m => m.AddMeasurementFormModule) }
+  { path: 'addMeasurementPage', loadChildren: () => import('./add-measurement-form/add-measurement-form.module').then(m => m.AddMeasurementFormModule) },
+  { path: 'showMeasurementChart', loadChildren: () => import('./measurement-line-chart/measurement-line-chart.module').then(m => m.MeasurementLineChartModule) }
 ];
 
 @NgModule({
